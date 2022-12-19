@@ -1,7 +1,14 @@
 package ru.netology.revision;
 
 public class Radio {
-    public int currentStation;
+    private int minStation = 0;
+    private int maxStation = 9;
+    private int currentStation = minStation;
+
+    public Radio(int amount) {
+        maxStation = amount - 1;
+        maxVolume = amount - 1;
+    }
 
     public void next() {
         if (currentStation == 9) {
@@ -33,11 +40,21 @@ public class Radio {
         currentStation = newCurrentStation;
     }
 
-    public int currentVolume;
+    private int minVolume = 0;
+    private int maxVolume = 100;
+    private int currentVolume = minVolume;
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        currentVolume = newCurrentVolume;
+    }
 
     public void plus() {
-        if (currentVolume == 10) {
-            currentVolume = 10;
+        if (currentVolume == 100) {
+            currentVolume = 100;
         } else {
             currentVolume++;
         }
