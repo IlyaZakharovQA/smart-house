@@ -35,25 +35,6 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void shouldSetMinusStation() {
-        Radio radioStation = new Radio(10);
-        radioStation.setCurrentStation(-1);
-
-        int expected = 0;
-        int actual = radioStation.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldSet10Station() {
-        Radio radioStation = new Radio(10);
-        radioStation.setCurrentStation(10);
-
-        int expected = 0;
-        int actual = radioStation.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void sholdSetNext9Station() {
@@ -109,6 +90,15 @@ public class RadioTest {
         Radio radioStation = new Radio(10);
         radioStation.setCurrentStation(9);
         radioStation.prev();
+        int expected = 8;
+        int actual = radioStation.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sholdSetStation() {
+        Radio radioStation = new Radio();
+        radioStation.setCurrentStation(8);
         int expected = 8;
         int actual = radioStation.getCurrentStation();
         Assertions.assertEquals(expected, actual);
