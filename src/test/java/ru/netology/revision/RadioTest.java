@@ -76,6 +76,15 @@ public class RadioTest {
     }
 
     @Test
+    public void sholdSetPrev0StationAmount20() {
+        Radio radioStation = new Radio(20);
+        radioStation.prev();
+        int expected = 19;
+        int actual = radioStation.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void sholdSetPrev5Station() {
         Radio radioStation = new Radio(10);
         radioStation.setCurrentStation(5);
